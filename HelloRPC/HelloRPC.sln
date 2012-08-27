@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcxproj", "{42DE0C66-4D36-4FB9-A69E-6F5CEA7EF2BC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPCClient", "Client\Client.vcxproj", "{42DE0C66-4D36-4FB9-A69E-6F5CEA7EF2BC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\Server.vcxproj", "{635EA9FC-0C36-4951-AD05-DD91E3FB0868}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPCServer", "Server\Server.vcxproj", "{635EA9FC-0C36-4951-AD05-DD91E3FB0868}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NokiaRegService", "ServiceTest\ServiceTest.vcxproj", "{3579656A-DAF2-4BA0-9972-74740FCAA5AE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceInstaller", "ServiceInstaller\ServiceInstaller.vcxproj", "{4FF81B5B-3C71-4A22-B85A-A919CC64FA87}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceController", "Controller\Controller.vcxproj", "{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +25,18 @@ Global
 		{635EA9FC-0C36-4951-AD05-DD91E3FB0868}.Debug|Win32.Build.0 = Debug|Win32
 		{635EA9FC-0C36-4951-AD05-DD91E3FB0868}.Release|Win32.ActiveCfg = Release|Win32
 		{635EA9FC-0C36-4951-AD05-DD91E3FB0868}.Release|Win32.Build.0 = Release|Win32
+		{3579656A-DAF2-4BA0-9972-74740FCAA5AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3579656A-DAF2-4BA0-9972-74740FCAA5AE}.Debug|Win32.Build.0 = Debug|Win32
+		{3579656A-DAF2-4BA0-9972-74740FCAA5AE}.Release|Win32.ActiveCfg = Release|Win32
+		{3579656A-DAF2-4BA0-9972-74740FCAA5AE}.Release|Win32.Build.0 = Release|Win32
+		{4FF81B5B-3C71-4A22-B85A-A919CC64FA87}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4FF81B5B-3C71-4A22-B85A-A919CC64FA87}.Debug|Win32.Build.0 = Debug|Win32
+		{4FF81B5B-3C71-4A22-B85A-A919CC64FA87}.Release|Win32.ActiveCfg = Release|Win32
+		{4FF81B5B-3C71-4A22-B85A-A919CC64FA87}.Release|Win32.Build.0 = Release|Win32
+		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Debug|Win32.Build.0 = Debug|Win32
+		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Release|Win32.ActiveCfg = Release|Win32
+		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
