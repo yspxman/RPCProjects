@@ -4,18 +4,19 @@
 #include <ctype.h>
 #include "hello.h" 
 #include <windows.h>
+#include <tchar.h>
 
-void main()
+void _tmain()
 {
     RPC_STATUS status;
-    unsigned char * pszUuid             = NULL;
-    unsigned char * pszProtocolSequence = L"ncalrpc";
-    unsigned char * pszNetworkAddress   = NULL;
-    unsigned char * pszEndpoint         = L"hello";
-    unsigned char * pszOptions          = NULL;
-    unsigned char * pszStringBinding    = NULL;
-    unsigned char * pszString           = "hello, world";
-    unsigned long ulCode;
+    _TCHAR* pszUuid             = NULL;
+    _TCHAR* pszProtocolSequence = L"ncalrpc";
+    _TCHAR* pszNetworkAddress   = NULL;
+    _TCHAR* pszEndpoint         = L"hello";
+    _TCHAR* pszOptions          = NULL;
+    _TCHAR* pszStringBinding    = NULL;
+    _TCHAR* pszString           = L"hello, world";
+    DWORD ulCode;
  
     status = RpcStringBindingCompose(pszUuid,
                                      pszProtocolSequence,
