@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include "hello.h"
 #include <windows.h>
+#include <tchar.h>
 
 void HelloProc(unsigned char * pszString, int* res)
 {
@@ -39,11 +40,13 @@ void main()
     unsigned int    cMinCalls = 1;
     unsigned int    fDontWait = FALSE;
  
-    status = RpcServerUseProtseqEp((unsigned char *)"ncalrpc",
+    status = RpcServerUseProtseqEp((_TCHAR*)L"ncalrpc",
                                    RPC_C_LISTEN_MAX_CALLS_DEFAULT,
-                                   (unsigned char *)"hello",
+                                   (_TCHAR*)L"hello",
                                    NULL); 
  
+
+
     if (status) exit(status);
  
     status = RpcServerRegisterIf(hello_v1_0_s_ifspec,								
