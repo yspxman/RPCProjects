@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceInstaller", "Service
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceController", "Controller\Controller.vcxproj", "{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IDL", "IDL\IDL.vcxproj", "{228A5A9C-F156-4482-8D20-DD000EB3D7E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,10 @@ Global
 		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Debug|Win32.Build.0 = Debug|Win32
 		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Release|Win32.ActiveCfg = Release|Win32
 		{38158FA0-6A2A-49FA-9DD3-3D0B0223E063}.Release|Win32.Build.0 = Release|Win32
+		{228A5A9C-F156-4482-8D20-DD000EB3D7E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{228A5A9C-F156-4482-8D20-DD000EB3D7E8}.Debug|Win32.Build.0 = Debug|Win32
+		{228A5A9C-F156-4482-8D20-DD000EB3D7E8}.Release|Win32.ActiveCfg = Release|Win32
+		{228A5A9C-F156-4482-8D20-DD000EB3D7E8}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,9 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3579656A-DAF2-4BA0-9972-74740FCAA5AE}</ProjectGuid>
-    <RootNamespace>ServiceTest</RootNamespace>
-    <ProjectName>NokiaRegService</ProjectName>
+    <ProjectGuid>{228A5A9C-F156-4482-8D20-DD000EB3D7E8}</ProjectGuid>
+    <RootNamespace>IDL</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -37,9 +36,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../Idl_Output;$(IncludePath)</IncludePath>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -47,8 +44,12 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Midl>
+      <OutputDirectory>../Idl_Output</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <AdditionalOptions>/app_config %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -64,13 +65,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Idl_Output\hello_s.c" />
-    <ClCompile Include="NokiaRegService.cpp" />
-    <ClCompile Include="RPCServer.cpp" />
+    <Midl Include="hello.idl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Idl_Output\hello.h" />
-    <ClInclude Include="RPCServer.h" />
+    <None Include="hello.acf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

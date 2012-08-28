@@ -1,0 +1,12 @@
+[
+uuid(c20fd6f3-bb93-4c78-8588-80e68e0aa80c),
+version(1.0),
+implicit_handle (handle_t hello_IfHandle)
+]
+
+interface hello
+{
+	
+    void HelloProc([in, string] unsigned char * pszString, [out] int *res);
+    void Shutdown(void);
+}

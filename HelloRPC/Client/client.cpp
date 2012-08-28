@@ -9,20 +9,22 @@
 void _tmain()
 {
     RPC_STATUS status;
+	/*
     _TCHAR* pszUuid             = NULL;
-    _TCHAR* pszProtocolSequence = L"ncalrpc";
+    _TCHAR* pszProtocolSequence = "ncalrpc";
     _TCHAR* pszNetworkAddress   = NULL;
-    _TCHAR* pszEndpoint         = L"hello";
+    _TCHAR* pszEndpoint         = "hello";
     _TCHAR* pszOptions          = NULL;
-    _TCHAR* pszStringBinding    = NULL;
-    _TCHAR* pszString           = L"hello, world";
+	*/
+    unsigned char* pszStringBinding    = NULL;
+     char* pszString("hello, world");
     DWORD ulCode;
  
-    status = RpcStringBindingCompose(pszUuid,
-                                     pszProtocolSequence,
-                                     pszNetworkAddress,
-                                     pszEndpoint,
-                                     pszOptions,
+    status = RpcStringBindingCompose(NULL,
+                                     (unsigned char*)"ncalrpc",
+                                     NULL,
+                                     (unsigned char*)"hello",
+                                     NULL,
                                      &pszStringBinding);
     if (status) exit(status);
 
@@ -35,8 +37,11 @@ void _tmain()
  
     RpcTryExcept  
     {
-        HelloProc(pszString);
-        Shutdown();
+		int res;
+        HelloProc((unsigned char*)pszString, &res);
+		printf("Server return %d\n", res);
+
+        //Shutdown();
     }
     RpcExcept(1) 
     {
@@ -51,7 +56,6 @@ void _tmain()
  
     status = RpcBindingFree(&hello_IfHandle);
  
-	//RpcBindingFree(&hello_v1_0_c_ifspec);
 
     if (status) exit(status);
 

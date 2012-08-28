@@ -1,23 +1,49 @@
-/* file: hellos.c */
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include "hello.h"
 #include <windows.h>
 
+void HelloProc(unsigned char * pszString, int* res)
+{
+    printf("%s\n", pszString);
+	*res = 250;
+}
+ 
+/* add this function to hellop.c */
+void Shutdown(void)
+{
+    RPC_STATUS status;
+ 
+    status = RpcMgmtStopServerListening(NULL);
+ 
+    if (status) 
+    {
+       exit(status);
+    }
+ 
+    status = RpcServerUnregisterIf(NULL, NULL, FALSE);
+ 
+    if (status) 
+    {
+       exit(status);
+    }
+} //end Shutdown
+
 void main()
 {
     RPC_STATUS status;
-    unsigned char * pszProtocolSequence = L"ncalrpc";
-    unsigned char * pszSecurity         = NULL; 
-    unsigned char * pszEndpoint         = L"hello";//"\\pipe\\hello";
+    /*
+	unsigned char * pszProtocolSequence = "ncalrpc";
+    unsigned char * pszEndpoint         = "hello";//"\\pipe\\hello";
+	*/
     unsigned int    cMinCalls = 1;
     unsigned int    fDontWait = FALSE;
  
-    status = RpcServerUseProtseqEp(pszProtocolSequence,
+    status = RpcServerUseProtseqEp((unsigned char *)"ncalrpc",
                                    RPC_C_LISTEN_MAX_CALLS_DEFAULT,
-                                   pszEndpoint,
-                                   pszSecurity); 
+                                   (unsigned char *)"hello",
+                                   NULL); 
  
     if (status) exit(status);
  

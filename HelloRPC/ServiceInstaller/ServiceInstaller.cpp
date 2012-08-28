@@ -116,35 +116,29 @@ int _tmain(int argc, _TCHAR* argv[])
     {
         if (_wcsicmp(L"install", argv[1] + 1) == 0)
         {
-			if (argc == 4)
-			{
+			if (argc == 4)	
 				InstallService(argv[2], argv[3]);
-
-			}
+			
 			else
-			{
-				wprintf(L"Usage: -install testservice c:\service.exe \n");
-			}
+				goto Usage;
             
         }
         else if (_wcsicmp(L"delete", argv[1] + 1) == 0)
         {
-			if (argc == 3)
-			{
+			if (argc == 3)			
 				HRESULT ok = UninstallService(argv[2]);
-
-			}
-
+			else
+				goto Usage;
         }
     }
 
     else 
-    {
-        wprintf(L"Parameters:\n");
-        wprintf(L" -start  to start the service.\n");
-        wprintf(L" -stop   to stop the service.\n");
-    }
-    
+		goto Usage;
+
+Usage:
+	wprintf(L"Parameters:\n");
+	wprintf(L" -install [name] [path]  to install the service.\n");
+	wprintf(L" -delete [name]  to delete the service.\n");    
     return 0;
 }
 

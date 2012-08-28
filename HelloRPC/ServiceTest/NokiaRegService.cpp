@@ -4,6 +4,7 @@
 #include <tchar.h>
 
 #include "../inc/common.h"
+#include "RPCServer.h"
 
 int beepDelay = 2000;
 
@@ -22,12 +23,9 @@ HANDLE threadHandle = NULL;
 
 DWORD ServiceThread(LPDWORD param)
 {
-
-	
-
 	while (1)
 	{
-		MessageBox(0, L"thread", L"Service", MB_OK | MB_SETFOREGROUND |MB_DEFAULT_DESKTOP_ONLY);
+		//MessageBox(0, L"thread", L"Service", MB_OK | MB_SETFOREGROUND |MB_DEFAULT_DESKTOP_ONLY);
 		Beep(200, 200);
 		Sleep(beepDelay);
 	}
@@ -70,13 +68,11 @@ BOOL InitService()
 	DWORD id;
 	
 	//start  the service's thread
-	threadHandle = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)ServiceThread, 0, 0, &id);
+	//threadHandle = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)ServiceThread, 0, 0, &id);
 
-	
-	if (threadHandle == 0)
-		return false;
-	else
-		return true;
+	return RPCServerInit();
+	//return true;
+
 }
 
 void Start(DWORD dwArgc, PWSTR *pszArgv)
@@ -230,7 +226,7 @@ void WINAPI ServiceMain(DWORD dwArgc, PWSTR *pszArgv)
     Start(dwArgc, pszArgv);
 
 
-	MessageBox(0, L"qrewerwe", L"Service", MB_OK | MB_SETFOREGROUND |MB_DEFAULT_DESKTOP_ONLY);
+	//MessageBox(0, L"qrewerwe", L"Service", MB_OK | MB_SETFOREGROUND |MB_DEFAULT_DESKTOP_ONLY);
 
 	WaitForSingleObject(terminateEvent, INFINITE);
 }
