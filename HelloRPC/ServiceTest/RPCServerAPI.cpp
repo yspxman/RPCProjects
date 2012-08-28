@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include "hello.h"
 #include <windows.h>
-#include "RPCServer.h"
+#include "RPCServerAPI.h"
 #include <tchar.h>
 
 

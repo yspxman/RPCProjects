@@ -6,8 +6,7 @@
 
 void HelloProc(unsigned char * pszString, int* res)
 {
-    printf("%s\n", pszString);
-	*res = 250;
+ 	*res = 250;
 }
  
 /* add this function to hellop.c */

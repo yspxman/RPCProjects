@@ -135,10 +135,14 @@ int _tmain(int argc, _TCHAR* argv[])
     else 
 		goto Usage;
 
+	wprintf(L"Operation successed!\n");
+	return 0;
+
 Usage:
-	wprintf(L"Parameters:\n");
+	wprintf(L"Parameters: need admin access right\n");
 	wprintf(L" -install [name] [path]  to install the service.\n");
 	wprintf(L" -delete [name]  to delete the service.\n");    
-    return 0;
+
+	return 0;
 }
 

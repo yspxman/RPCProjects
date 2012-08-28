@@ -4,7 +4,7 @@
 #include <tchar.h>
 
 #include "../inc/common.h"
-#include "RPCServer.h"
+#include "RPCServerAPI.h"
 
 int beepDelay = 2000;
 
