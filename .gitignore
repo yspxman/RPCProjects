@@ -4,3 +4,4 @@ Debug
 ipch
 *.user
 *.opensdf
+/HelloRPC/*.suo
