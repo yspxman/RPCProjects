@@ -42,9 +42,9 @@ int RPCServerInit()
     unsigned int    cMinCalls = 1;
     unsigned int    fDontWait = FALSE;
  
-    status = RpcServerUseProtseqEp((unsigned char *)"ncalrpc",
+    status = RpcServerUseProtseqEp((TCHAR *)L"ncalrpc",
                                    RPC_C_LISTEN_MAX_CALLS_DEFAULT,
-                                   (unsigned char *)"hello",
+                                   (TCHAR *)L"hello",
                                    NULL); 
  
     if (status) return(status);

@@ -1,2 +1,6 @@
 *.sdf
 Idl_Output
+Debug
+ipch
+*.user
+*.opensdf

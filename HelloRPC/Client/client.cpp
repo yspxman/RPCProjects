@@ -16,14 +16,14 @@ void _tmain()
     _TCHAR* pszEndpoint         = "hello";
     _TCHAR* pszOptions          = NULL;
 	*/
-    unsigned char* pszStringBinding    = NULL;
+    _TCHAR* pszStringBinding    = NULL;
      char* pszString("hello, world");
     DWORD ulCode;
  
     status = RpcStringBindingCompose(NULL,
-                                     (unsigned char*)"ncalrpc",
+                                     (_TCHAR*)L"ncalrpc",
                                      NULL,
-                                     (unsigned char*)"hello",
+                                     (_TCHAR*)L"hello",
                                      NULL,
                                      &pszStringBinding);
     if (status) exit(status);
